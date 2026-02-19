@@ -12,7 +12,7 @@ namespace NZWalks.API.Repositories
         public SQLRegionRepository(NZWalksEntities nZWalksEntities)
         {
             _nZWalksEntities = nZWalksEntities;
-        }
+        }  
 
         public async Task<Region> CreateAsync(Region region)
         {
