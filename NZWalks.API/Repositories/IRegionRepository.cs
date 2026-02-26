@@ -9,5 +9,7 @@ namespace NZWalks.API.Repositories
         Task<List<Region>> GetAllAsync(string? filterOn, string? filterQuery,string? sortBy, bool isAscending = true, int pageNumber = 1, int pageSize = 50);
         Task<Region> GetByIdAsync(Guid Id);
         Task<Region> CreateAsync(Region region);
+        Task<Region?> DeleteAsync(Guid id);
+        Task<Region?> UpdateAsync(Guid id, Region region);
     }
 }

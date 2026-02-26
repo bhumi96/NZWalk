@@ -5,7 +5,7 @@ namespace NZWalks.API.Migrations
 {
     public class NZWalksEntities : DbContext
     {
-        public NZWalksEntities(DbContextOptions options) : base(options) { }
+        public NZWalksEntities(DbContextOptions<NZWalksEntities> options) : base(options) { }
        
         public DbSet<Region> Region {  get; set; }
         public DbSet<Difficulty> Difficulties { get; set; }
