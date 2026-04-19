@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using NZWalks.API.Migrations;
 
@@ -11,9 +12,11 @@ using NZWalks.API.Migrations;
 namespace NZWalks.API.Migrations
 {
     [DbContext(typeof(NZWalksEntities))]
-    partial class NZWalksEntitiesModelSnapshot : ModelSnapshot
+    [Migration("20260419074210_SeedData")]
+    partial class SeedData
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -74,26 +77,6 @@ namespace NZWalks.API.Migrations
                     b.HasKey("RegionId");
 
                     b.ToTable("Region");
-
-                    b.HasData(
-                        new
-                        {
-                            RegionId = new Guid("920b4881-b3b6-4422-aa07-8e00b0069b0e"),
-                            Code = "Region1",
-                            Name = "Region North"
-                        },
-                        new
-                        {
-                            RegionId = new Guid("f5af8551-16cc-4e1e-bef5-12a4d7afec77"),
-                            Code = "Region2",
-                            Name = "Region South"
-                        },
-                        new
-                        {
-                            RegionId = new Guid("15a85ab3-0153-4021-8cea-2ef6ffd56598"),
-                            Code = "Region3",
-                            Name = "Region East"
-                        });
                 });
 
             modelBuilder.Entity("NZWalks.API.Domain_Model.Walks", b =>

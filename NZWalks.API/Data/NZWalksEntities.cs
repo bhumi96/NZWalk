@@ -39,6 +39,35 @@ namespace NZWalks.API.Migrations
 
             // Seed difficulties to the database
             modelBuilder.Entity<Difficulty>().HasData(difficulties);
+
+            // Seed data for Region
+            var region = new List<Region>()
+            {
+                new Region()
+                {
+                    RegionId = Guid.Parse("920b4881-b3b6-4422-aa07-8e00b0069b0e"),
+                    Code = "Region1",
+                    Name = "Region North"
+                },
+                new Region()
+                {
+                    RegionId = Guid.Parse("f5af8551-16cc-4e1e-bef5-12a4d7afec77"),
+                    Code = "Region2",
+                    Name = "Region South"
+                },
+                new Region()
+                {
+                    RegionId = Guid.Parse("15a85ab3-0153-4021-8cea-2ef6ffd56598"),
+                    Code = "Region3",
+                    Name = "Region East"
+                },
+            };
+
+            // Seed Region to the database
+            modelBuilder.Entity<Region>().HasData(region);
+
+            // Generate New GUID using Package Manager Console using : [guid]::NewGuid()
+
         }
 
     }
